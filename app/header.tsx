@@ -5,7 +5,7 @@ interface layout {
 
 import Image from "next/image";
 export default async function Header() {
-  const layuotResponse = await fetch("http://localhost:4500/layout", {
+  const layuotResponse = await fetch("https://fit-shoes-server.vercel.app/layout", {
     cache: "no-store",
   });
   const layoutData: layout[] = await layuotResponse.json();
