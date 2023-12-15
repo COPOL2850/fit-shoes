@@ -1,0 +1,14 @@
+{
+  "layout":[
+    {
+      "id": "fit-shoes-vector-logo",
+      "src": "/layout/fit-shoes-vector-logo.svg"
+    },
+    {
+      "id":"fit-shoes-text-logo",
+      "src": "/layout/fit-shoes-text-logo.svg"
+      
+    }
+
+  ]
+}
