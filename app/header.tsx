@@ -46,7 +46,7 @@ export default  function Header() {
     <div>
       <div className="h-5 w-full  sm:h-8">
         <Link href={"/"} className="h-full flex justify-center items-center overflow-hidden">
-          <Image className="h-full max-w-none" src={layoutData != null ? layoutData[2].src: ""} height={40} width={2000} alt={layoutData != null ? layoutData[2].id: ""} />
+          <Image className="h-full max-w-none" src={layoutData !=undefined ? layoutData[2].src: "/layout"} priority={false} height={40} width={2000}  alt={layoutData !=undefined ? layoutData[2].id: ""} />
         </Link>
       </div>
       
@@ -58,11 +58,11 @@ export default  function Header() {
             <Navigation /> }
         <div className="h-full w-48  flex justify-center items-center ">
           <Link href={"/"} className="w-10 h-full   flex justify-center items-center">
-            <Image src={layoutData != null ? layoutData[0].src: ""} width={30} height={30} alt={layoutData != null ? layoutData[0].id: ""} />
+            <Image src={layoutData !=undefined ? layoutData[0].src: "/layout"} width={30} height={30} alt={layoutData !=undefined ? layoutData[0].id: ""} />
 
           </Link>
           <Link href={"/"} className=" h-full w-36 flex justify-center items-center">
-            <Image src={layoutData != null ? layoutData[1].src: ""} width={144} height={40} alt={layoutData != null ? layoutData[0].id: ""} />
+            <Image src={layoutData !=undefined ? layoutData[1].src: "/layout"} width={144} height={40} alt={layoutData !=undefined ? layoutData[0].id: ""} />
           </Link>
         </div>
         {useWindowSize()[2] == "desktop" ? 
