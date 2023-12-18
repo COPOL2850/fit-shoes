@@ -23,8 +23,8 @@ import useWindowSize from "./windowSize";
 import Header from "./header";
 import Link from "next/link";
 export default function Navigation() {
-    const [open, setOpen] = useState(true);
-    const [sideBarCategoriesIsOpen,setSideBarCategoriesIsOpen] = useState(true)
+    const [open, setOpen] = useState(false);
+    const [sideBarCategoriesIsOpen,setSideBarCategoriesIsOpen] = useState(false)
     const [categories,setCategories] = useState<category[]>()
 
     console.log();

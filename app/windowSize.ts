@@ -6,8 +6,12 @@ import { useEffect, useState } from "react"
 
 export default function useWindowSize() {
     
-    const [windowWidth,setWindowWidth] = useState(window.innerWidth);
-    const [windowHeight,setWindowHeight] = useState(window.innerHeight);
+
+  
+
+
+    const [windowWidth,setWindowWidth] = useState(1201);
+    const [windowHeight,setWindowHeight] = useState(766);
     const [screenSize,setScreenSize] = useState("");
     
 
