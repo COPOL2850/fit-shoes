@@ -10,6 +10,11 @@
     "server": "json-server --watch db.json --port 4500"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@mui/icons-material": "^5.15.0",
     "json-server": "^0.17.4",
     "next": "14.0.4",
     "react": "^18",

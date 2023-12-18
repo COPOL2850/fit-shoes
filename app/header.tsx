@@ -1,26 +1,74 @@
+'use client'
+
 interface layout {
   id: string;
   src: string;
 }
 
+
+
+
 import Image from "next/image";
-export default async function Header() {
-  const layuotResponse = await fetch("https://fit-shoes-server.vercel.app/layout", {
-    cache: "no-store",
-  });
-  const layoutData: layout[] = await layuotResponse.json();
+import Link from "next/link";
+import Navigation from "./navigation";
+import useWindowSize from "./windowSize"
+
+import { useEffect, useState } from "react";
+import Home from "./page";
+
+
+
+
+export default  function Header() {
+  
+  const [layoutData,setLayoutData]  = useState<layout[]>()
+  
+  useEffect(() => {
+    fetch("https://fit-shoes-server.vercel.app/layout")
+      .then((res) => res.json())
+      .then((data) => setLayoutData(data));
+ }, []);
   
 
+  
+  
+  
+  
+  
+  
+  
+
+  
+  // layoutData[2].src
+
+  
   return (
-    <div className="w-full h-12 bg-orange-700 ">
-      <div className="h-full w-48  flex justify-center items-center ">
-        <div className="w-10 h-full   flex justify-center items-center">
-          <Image  src={layoutData[0].src} width={30} height={30} alt={layoutData[0].id} />
-          
+    <div>
+      <div className="h-5 w-full  sm:h-8">
+        <Link href={"/"} className="h-full flex justify-center items-center overflow-hidden">
+          <Image className="h-full max-w-none" src={layoutData != null ? layoutData[2].src: ""} height={40} width={2000} alt={layoutData != null ? layoutData[2].id: ""} />
+        </Link>
+      </div>
+      
+      <div className="w-full h-12 bg-orange-700 flex ">
+        
+      {useWindowSize()[2] == "desktop" ? 
+            ""
+            : 
+            <Navigation /> }
+        <div className="h-full w-48  flex justify-center items-center ">
+          <Link href={"/"} className="w-10 h-full   flex justify-center items-center">
+            <Image src={layoutData != null ? layoutData[0].src: ""} width={30} height={30} alt={layoutData != null ? layoutData[0].id: ""} />
+
+          </Link>
+          <Link href={"/"} className=" h-full w-36 flex justify-center items-center">
+            <Image src={layoutData != null ? layoutData[1].src: ""} width={144} height={40} alt={layoutData != null ? layoutData[0].id: ""} />
+          </Link>
         </div>
-        <div className=" h-full w-36 flex justify-center items-center">
-            <Image src={layoutData[1].src} width={144} height={40} alt={layoutData[1].id}/>
-        </div>
+        {useWindowSize()[2] == "desktop" ? 
+            <Navigation /> 
+            : 
+            "" }
       </div>
     </div>
   );
