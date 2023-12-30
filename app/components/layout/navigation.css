@@ -1,0 +1,16 @@
+.sidebar-items-container::-webkit-scrollbar{
+    width:5px;
+}
+
+/* Track */
+.sidebar-items-container::-webkit-scrollbar-track {
+    
+    border-radius: 5px;
+}
+ 
+/* Handle */
+.sidebar-items-container::-webkit-scrollbar-thumb {
+    background: #ffffff9e;
+    border-radius: 5px;
+    
+}
